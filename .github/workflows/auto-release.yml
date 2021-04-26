@@ -37,7 +37,7 @@ jobs:
       run: |
         mkdir bin
         cd bin
-        ../configure.py
+        python3 ../configure.py
         make minion -j2
     - name: Make Zip
       run: 
