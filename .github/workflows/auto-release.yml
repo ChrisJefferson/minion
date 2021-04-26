@@ -41,7 +41,8 @@ jobs:
         make minion -j2
     - name: Make Zip
       run: 
-        7z a -tzip ${{ github.workspace }}/bin/minion-${{ matrix.os }}.zip ${{ github.workspace }}/bin/minion
+        7z a -tzip minion-${{ matrix.os }}.zip minion
+        working-directory: ${{ github.workspace }}/bin
     - name: Upload Release Asset
       id: upload-release-asset
       uses: actions/upload-release-asset@v1
